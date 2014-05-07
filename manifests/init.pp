@@ -1,8 +1,7 @@
 #
 class tcptuning () {
-
   file {'/etc/sysctl.d/60-tcptuning.conf':
-    source => template('tcptuning/60-tcptuning.conf.erb'),
+    content => template('tcptuning/60-tcptuning.conf.erb'),
     notify => Exec['tcp-tuning'],
   }
 
